@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [18544:4628:0412/193158.977:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
 [18544:15684:0412/193159.035:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
 [18544:4628:0412/193159.053:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
@@ -10,3 +11,16 @@
 [4004:20772:0412/193203.882:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-99720A0758B1ECB4936970312EDA5E72 will be ignored
 [12832:18292:0412/200434.993:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 7-E5C2C15A87477C165EC2B331F38E65FC will be ignored
 [18544:4628:0412/214125.929:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+=======
+[6488:9608:0413/230546.257:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[6488:2552:0413/230546.315:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[6488:9608:0413/230546.326:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[6488:2552:0413/230549.065:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[6488:2552:0413/230549.067:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[6488:2552:0413/230549.070:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[6488:2552:0413/230549.073:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[6488:13840:0413/230549.754:WARNING:value_store_frontend.cc(47)] Reading ahfgeienlihckogmohjhadlkjgocpleb.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[6488:13840:0413/230549.757:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[8876:18128:0413/230550.369:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-15D0F572A59695CF57E50D970C95E960 will be ignored
+[6488:9608:0413/230912.442:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+>>>>>>> Stashed changes

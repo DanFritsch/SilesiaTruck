@@ -1,0 +1,15 @@
+[10788:11428:0413/222928.989:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[10788:11428:0413/222929.032:ERROR:os_crypt_win.cc(100)] Failed to decrypt: Nieprawidłowy klucz do użycia w podanym stanie. (0x8009000B)
+[10788:16168:0413/222929.094:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[10788:11428:0413/222929.156:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[10788:19648:0413/222934.333:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[10788:19648:0413/222934.336:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[10788:19648:0413/222934.338:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[10788:19648:0413/222934.341:WARNING:leveldb_database.cc(141)] Unable to open C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata: IO error: C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\shared_proto_db\metadata/MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[10788:16168:0413/222935.245:WARNING:value_store_frontend.cc(47)] Reading ahfgeienlihckogmohjhadlkjgocpleb.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[10788:16168:0413/222935.254:WARNING:value_store_frontend.cc(47)] Reading mhjfbmdgcfjbbpaeojofohoefgiehjai.alarms from  failed: IO error: .../MANIFEST-000001: Unable to create sequential file (ChromeMethodBFE: 7::NewSequentialFile::1)
+[15096:18468:0413/222935.467:WARNING:backend_impl.cc(1543)] Messed up entry found.
+[15096:18468:0413/222935.467:ERROR:backend_impl.cc(989)] Critical error found -8
+[15096:18468:0413/222935.618:WARNING:storage_block-inl.h(138)] Failed data load.
+[15096:18468:0413/222935.619:WARNING:storage_block-inl.h(138)] Failed data load.
+[15096:18468:0413/222935.619:ERROR:entry_impl.cc(955)] Failed to save user data
