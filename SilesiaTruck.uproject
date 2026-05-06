@@ -3,6 +3,9 @@
 	"EngineAssociation": "5.7",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+
+	],
 	"Plugins": [
 		{
 			"Name": "RawInput",
