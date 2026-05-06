@@ -1,3 +1,5 @@
-2026/05/06-18:55:49.677 5b70 Reusing MANIFEST C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\Local Storage\leveldb/MANIFEST-000001
-2026/05/06-18:55:49.687 5b70 Recovering log #3
-2026/05/06-18:55:49.689 5b70 Reusing old log C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\Local Storage\leveldb/000003.log 
+2026/05/06-19:46:49.026 e18 Reusing MANIFEST C:\Users\Ja\Programming Projects\Unreal Engine\SilesiaTruck\Saved\webcache_6613\Default\Local Storage\leveldb/MANIFEST-000001
+2026/05/06-19:46:49.051 e18 Recovering log #3
+2026/05/06-19:46:49.051 e18 Level-0 table #3: started
+2026/05/06-19:46:49.059 e18 Level-0 table #3: 59184 bytes OK
+2026/05/06-19:46:49.066 e18 Delete type=0 #3
