@@ -33,7 +33,9 @@ double UAlgorithmBPLibrary::Heuristic(const FPoint& A, const FPoint& B, bool bUs
 
 bool UAlgorithmBPLibrary::IsValid(const FPoint& P, const TArray<int32>& Grid, int32 GridWidth, int32 GridHeight)
 {
-	return P.Y >= 0 && P.Y < GridWidth && P.X >= 0 && P.X < GridHeight && Grid[P.Y * GridWidth + P.X] == 0;
+	return P.Y >= 0 && P.Y < GridHeight
+		&& P.X >= 0 && P.X < GridWidth
+		&& Grid[P.Y * GridWidth + P.X] == 0;
 }
 
 TArray<FPoint> UAlgorithmBPLibrary::GetNeighbors(const FPoint& P, bool bUseOctileHeuristic)
