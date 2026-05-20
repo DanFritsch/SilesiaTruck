@@ -1,0 +1,9 @@
+.vs/
+Intermediate/
+Binaries/
+DerivedDataCache/
+Saved/
+*.pch
+*.ipch
+*.VC.db
+_TODO NOTES & STUFF.txt
