@@ -1,8 +1,4 @@
-[3488:4976:0527/182642.869:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[3488:13372:0527/182642.972:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
-[3488:4976:0527/182643.026:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[1868:13088:0527/182701.940:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-D678B6E7972B3D02EDA4B8F122A83F76 will be ignored
-[3488:4976:0527/191051.611:ERROR:device_event_log_impl.cc(196)] [19:10:51.506] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Nie można odnaleźć elementu. (0x490)
-[3488:4976:0527/204211.957:ERROR:device_event_log_impl.cc(196)] [20:42:11.904] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Nie można odnaleźć elementu. (0x490)
-[3488:4976:0527/212532.946:ERROR:device_event_log_impl.cc(196)] [21:25:32.671] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Nie można odnaleźć elementu. (0x490)
-[3488:4976:0527/214157.478:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[12420:7080:0610/154905.771:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[12420:3688:0610/154905.871:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[12420:7080:0610/154905.930:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[8668:6264:0610/154919.209:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-CDF15F9047F7FBBFD3FC219F99A0251D will be ignored
