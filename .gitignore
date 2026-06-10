@@ -3,6 +3,7 @@ Intermediate/
 Binaries/
 DerivedDataCache/
 Saved/
+cesium-request-cache.sqlite
 *.pch
 *.ipch
 *.VC.db
