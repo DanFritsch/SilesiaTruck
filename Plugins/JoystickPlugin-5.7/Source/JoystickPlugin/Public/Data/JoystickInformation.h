@@ -1,0 +1,101 @@
+﻿// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#pragma once
+
+#include "Data/JoystickInstanceId.h"
+#include "Data/JoystickType.h"
+#include "Data/JoystickPowerLevel.h"
+#include "Data/JoystickHapticInformation.h"
+#include "Data/JoystickHapticRumbleInformation.h"
+#include "Data/JoystickSensorInformation.h"
+
+#include "JoystickInformation.generated.h"
+
+USTRUCT(BlueprintType)
+struct FJoystickInformation
+{
+	GENERATED_BODY()
+
+	FJoystickInformation()
+		: InstanceId(-1)
+		  , Type(EJoystickType::Unknown)
+		  , ProductId(0)
+		  , FirmwareVersion(0)
+		  , ProductVersion(0)
+		  , VendorId(0)
+		  , IsGameController(false)
+		  , PowerLevel(EJoystickPowerLevel::Unknown)
+		  , LedSupport(false)
+		  , RumbleSupport(false)
+		  , CollectionIndex(-1)
+	{
+	}
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FJoystickInstanceId InstanceId;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FString DeviceName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FString SafeDeviceName;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	EJoystickType Type;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	int32 ProductId;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FString DeviceHash;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FGuid ProductGuid;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FString SerialNumber;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	FString Path;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	int32 FirmwareVersion;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	int32 ProductVersion;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	int32 VendorId;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	bool IsGameController;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config")
+	EJoystickPowerLevel PowerLevel;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config|Supported Features")
+	bool LedSupport;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config|Supported Features")
+	bool RumbleSupport;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config|Haptic")
+	FJoystickHapticInformation Haptic;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config|Haptic")
+	FJoystickHapticRumbleInformation HapticRumble;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config|Sensors")
+	FJoystickSensorInformation Gyro;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Device Config|Sensors")
+	FJoystickSensorInformation Accelerometer;
+
+	int CollectionIndex;
+
+	FString GetDeviceDisplayName() const
+	{
+		return !DeviceName.IsEmpty() ? DeviceName : SafeDeviceName;
+	}
+};

@@ -1,0 +1,24 @@
+﻿// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#pragma once
+
+#include "JoystickSensorInformation.generated.h"
+
+USTRUCT(BlueprintType)
+struct FJoystickSensorInformation
+{
+	GENERATED_BODY()
+
+	FJoystickSensorInformation()
+		: Enabled(false)
+		  , Supported(false)
+	{
+	}
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Sensor Config")
+	bool Enabled;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Sensor Config")
+	bool Supported;
+};

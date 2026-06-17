@@ -1,0 +1,55 @@
+﻿// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#pragma once
+#include "Data/Settings/JoystickInputDeviceButtonProperties.h"
+
+#include "ButtonData.generated.h"
+
+USTRUCT(BlueprintType)
+struct JOYSTICKPLUGIN_API FButtonData
+{
+	GENERATED_BODY()
+
+	FButtonData()
+		: ButtonState(false)
+		  , PreviousButtonState(false)
+		  , InvertOutput(false)
+	{
+	}
+
+	bool GetValue() const
+	{
+		return InvertOutput ? !ButtonState : ButtonState;
+	}
+
+	bool GetMockValue(const FJoystickInputDeviceButtonProperties& ButtonProperties) const
+	{
+		return ButtonProperties.InvertOutput ? !ButtonState : ButtonState;
+	}
+
+	bool GetPreviousValue() const
+	{
+		return InvertOutput ? !PreviousButtonState : PreviousButtonState;
+	}
+
+	void Update(const bool& InValue)
+	{
+		PreviousButtonState = ButtonState;
+		ButtonState = InValue;
+	}
+
+	void Processed()
+	{
+		PreviousButtonState = ButtonState;
+	}
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category="Joystick|Button")
+	bool ButtonState;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category="Joystick|Button")
+	bool PreviousButtonState;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category="Joystick|Axis")
+	bool InvertOutput;
+};

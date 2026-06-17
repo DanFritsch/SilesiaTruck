@@ -1,0 +1,28 @@
+// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#pragma once
+
+#include "Interfaces/JoystickPluginInterface.h"
+
+class FJoystickInputDevice;
+
+class JOYSTICKPLUGIN_API FJoystickPluginModule final : public IJoystickPlugin
+{
+public:
+	virtual TSharedPtr<IInputDevice> CreateInputDevice(const TSharedRef<FGenericApplicationMessageHandler>& InMessageHandler) override;
+
+	virtual void StartupModule() override;
+	virtual void ShutdownModule() override;
+
+	TSharedPtr<FJoystickInputDevice> GetJoystickInputDevice() const { return JoystickInputDevice; }
+
+	static FString PluginName;
+	static FString PluginDirectory;
+	static FString PluginSourceDirectory;
+	static FString PluginThirdPartyDirectory;
+
+private:
+	void* SdlDllHandle = nullptr;
+	TSharedPtr<FJoystickInputDevice> JoystickInputDevice;
+};

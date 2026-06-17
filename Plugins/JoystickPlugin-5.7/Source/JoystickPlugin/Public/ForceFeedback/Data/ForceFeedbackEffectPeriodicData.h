@@ -1,0 +1,54 @@
+// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#pragma once
+
+#include "ForceFeedback/Data/Base/ForceFeedbackEffectDirectionData.h"
+#include "ForceFeedback/Data/Base/ForceFeedbackEffectDurationData.h"
+#include "ForceFeedback/Data/Base/ForceFeedbackEffectReplayData.h"
+#include "ForceFeedback/Data/Base/ForceFeedbackEffectEnvelopeData.h"
+#include "ForceFeedback/Types/ForceFeedbackPeriodicEffectType.h"
+
+#include "ForceFeedbackEffectPeriodicData.generated.h"
+
+USTRUCT(BlueprintType)
+struct JOYSTICKPLUGIN_API FForceFeedbackEffectPeriodicData
+{
+	GENERATED_BODY()
+
+	FForceFeedbackEffectPeriodicData()
+		: EffectType(EForceFeedbackPeriodicEffectType::Sine)
+		  , Period(0.2f)
+		  , Magnitude(1.0f)
+		  , Offset(0.0f)
+		  , Phase(0.0f)
+	{
+	}
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic")
+	FForceFeedbackEffectDirectionData DirectionData;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic")
+	FForceFeedbackEffectDurationData DurationData;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic")
+	FForceFeedbackEffectReplayData ReplayData;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic")
+	FForceFeedbackEffectEnvelopeData EnvelopeData;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic")
+	EForceFeedbackPeriodicEffectType EffectType;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic", meta=(UIMin="0", UIMax="65.535", ClampMin="0", ClampMax="65.535"))
+	float Period;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic", meta=(UIMin="-1", UIMax="1", ClampMin="-1", ClampMax="1"))
+	float Magnitude;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic", meta=(UIMin="-1", UIMax="1", ClampMin="-1", ClampMax="1"))
+	float Offset;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Joystick|Force Feedback|Periodic", meta=(UIMin="0", UIMax="655.35", ClampMin="0", ClampMax="655.35"))
+	float Phase;
+};
