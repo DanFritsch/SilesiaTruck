@@ -1,25 +1,5 @@
-[20728:16720:0615/193701.888:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[20728:21304:0615/193701.957:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
-[20728:16720:0615/193701.997:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[8620:12504:0615/193711.689:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-57FFAE6C7167277AFA24AE6C262D717A will be ignored
-[20728:13836:0615/193712.511:WARNING:browser_info.cc(345)] Returning a speculative frame for [7,9]
-[20728:16720:0615/193712.585:WARNING:browser_info.cc(345)] Returning a speculative frame for [9,5]
-[20728:16720:0615/193712.585:WARNING:browser_info.cc(345)] Returning a speculative frame for [9,5]
-[20728:16720:0615/193712.585:WARNING:browser_info.cc(345)] Returning a speculative frame for [9,5]
-[20728:16720:0615/193712.585:WARNING:browser_info.cc(345)] Returning a speculative frame for [9,5]
-[20728:13836:0615/193712.596:WARNING:browser_info.cc(345)] Returning a speculative frame for [9,5]
-[19988:3172:0615/193714.850:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[19988:3172:0615/193717.064:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[19988:11600:0615/193717.092:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[19988:11600:0615/193717.093:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[19988:11600:0615/193717.094:WARNING:codec.cc(525)] Explicitly added H264 constrained baseline to list of supported formats.
-[8248:8172:0615/193717.105:WARNING:host_resolver_dns_task.cc(863)] Address list empty after RFC3484 sort
-[8248:8172:0615/193717.109:ERROR:socket_manager.cc(147)] Failed to resolve address for stun.cloudflare.com., errorcode: -105
-[8248:8172:0615/193717.109:ERROR:socket_manager.cc(147)] Failed to resolve address for stun.cloudflare.com., errorcode: -105
-[8248:8172:0615/193717.109:ERROR:socket_manager.cc(147)] Failed to resolve address for stun.cloudflare.com., errorcode: -105
-[19988:11600:0615/193717.109:WARNING:stun_port.cc(442)] Port[41ad400:0:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
-[19988:11600:0615/193717.110:WARNING:stun_port.cc(442)] Port[41adc00:1:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
-[19988:11600:0615/193717.110:WARNING:stun_port.cc(442)] Port[41ae400:2:1:0:host:Net[any:0:0:0:x:x:x:x:x/0:Wildcard:id=0]]: StunPort: stun host lookup received error -1
-[3720:3836:0615/193922.197:ERROR:shared_image_manager.cc(224)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
-[3720:3836:0615/193922.197:ERROR:shared_image_manager.cc(224)] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
-[20728:16720:0615/194102.366:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[3428:16420:0615/194331.165:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[3428:15700:0615/194331.264:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[3428:16420:0615/194331.296:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[5996:9776:0615/194337.647:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-DFA24F9C4E0830F7CBEF38F175AB39D2 will be ignored
+[3428:16420:0615/231416.788:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
