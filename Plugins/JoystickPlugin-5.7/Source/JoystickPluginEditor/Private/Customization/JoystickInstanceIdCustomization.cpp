@@ -1,0 +1,30 @@
+﻿// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#include "Customization/JoystickInstanceIdCustomization.h"
+
+#if WITH_EDITOR
+
+#include "Data/JoystickInstanceId.h"
+#include "DetailWidgetRow.h"
+
+void FJoystickInstanceIdCustomization::CustomizeHeader(const TSharedRef<IPropertyHandle> StructPropertyHandle, FDetailWidgetRow& HeaderRow, IPropertyTypeCustomizationUtils& StructCustomizationUtils)
+{
+	ValueProp = StructPropertyHandle->GetChildHandle(GET_MEMBER_NAME_CHECKED(FJoystickInstanceId, Value));
+
+	HeaderRow
+		.NameContent()
+		[
+			StructPropertyHandle->CreatePropertyNameWidget(ValueProp->GetPropertyDisplayName())
+		]
+		.ValueContent()
+		[
+			ValueProp->CreatePropertyValueWidget()
+		];
+}
+
+void FJoystickInstanceIdCustomization::CustomizeChildren(TSharedRef<IPropertyHandle> StructPropertyHandle, IDetailChildrenBuilder& StructBuilder, IPropertyTypeCustomizationUtils& StructCustomizationUtils)
+{
+}
+
+#endif

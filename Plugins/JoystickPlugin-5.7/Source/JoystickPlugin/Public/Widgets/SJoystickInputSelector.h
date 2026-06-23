@@ -1,0 +1,225 @@
+// JoystickPlugin is licensed under the MIT License.
+// Copyright Jayden Maalouf 2026. All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Misc/Attribute.h"
+#include "InputCoreTypes.h"
+#include "Data/KeySelectorData.h"
+#include "Layout/Margin.h"
+#include "Fonts/SlateFontInfo.h"
+#include "Input/Reply.h"
+#include "Styling/SlateWidgetStyleAsset.h"
+#include "Widgets/DeclarativeSyntaxSupport.h"
+#include "Widgets/SCompoundWidget.h"
+#include "Styling/SlateTypes.h"
+#include "Styling/CoreStyle.h"
+#include "Framework/Commands/InputChord.h"
+#include "Layout/Visibility.h"
+
+class SButton;
+class STextBlock;
+
+class JOYSTICKPLUGIN_API SJoystickInputSelector : public SCompoundWidget
+{
+public:
+	DECLARE_DELEGATE_OneParam(FOnKeySelected, const FInputChord&)
+	DECLARE_DELEGATE_OneParam(FOnIsSelectingChanged, bool)
+
+	SLATE_BEGIN_ARGS(SJoystickInputSelector)
+			: _SelectedKey(FInputChord(EKeys::Invalid))
+			  , _ButtonStyle(&FCoreStyle::Get().GetWidgetStyle<FButtonStyle>("Button"))
+			  , _TextStyle(&FCoreStyle::Get().GetWidgetStyle<FTextBlockStyle>("NormalText"))
+			  , _KeySelectionText(NSLOCTEXT("InputKeySelector", "DefaultKeySelectionText", "..."))
+			  , _NoKeySpecifiedText(NSLOCTEXT("InputKeySelector", "DefaultEmptyText", "Empty"))
+			  , _SetUseAxisProperties(true)
+			  , _SetMinRange(0.0f)
+			  , _SetMaxRange(1.0f)
+			  , _SetMinRangeOffset(0.0f)
+			  , _SetMaxRangeOffset(0.0f)
+			  , _SetAxisSelectionTimeout(5.0f)
+			  , _SetDeadZone(0.05f)
+			  , _EscapeCancelsSelection(true)
+			  , _IsFocusable(true)
+		{
+		}
+
+		/** The currently selected key */
+		SLATE_ATTRIBUTE(FInputChord, SelectedKey)
+
+		/** The font used to display the currently selected key. */
+		SLATE_ATTRIBUTE(FSlateFontInfo, Font)
+
+		/** The margin around the selected key text. */
+		SLATE_ATTRIBUTE(FMargin, Margin)
+
+		/** The style of the button used to enable key selection. */
+		SLATE_STYLE_ARGUMENT(FButtonStyle, ButtonStyle)
+
+		/** The text style of the button text */
+		SLATE_STYLE_ARGUMENT(FTextBlockStyle, TextStyle)
+
+		/** The text to display while selecting a new key. */
+		SLATE_ARGUMENT(FText, KeySelectionText)
+
+		/** The text to display while no key text is available or not selecting a key. */
+		SLATE_ARGUMENT(FText, NoKeySpecifiedText)
+
+		SLATE_ARGUMENT(int32, KeySelectorTypes)
+		SLATE_ARGUMENT(int32, InputSelectorTypes)
+
+		SLATE_ARGUMENT(bool, SetUseAxisProperties)
+		SLATE_ARGUMENT(float, SetMinRange)
+		SLATE_ARGUMENT(float, SetMaxRange)
+
+		SLATE_ARGUMENT(float, SetMinRangeOffset)
+		SLATE_ARGUMENT(float, SetMaxRangeOffset)
+		SLATE_ARGUMENT(float, SetAxisSelectionTimeout)
+
+		SLATE_ARGUMENT(float, SetDeadZone)
+
+		/** When true, pressing escape will cancel the key selection, when false, pressing escape will select the escape key. */
+		SLATE_ARGUMENT(bool, EscapeCancelsSelection)
+
+		/** When EscapeCancelsSelection is true, escape on specific keys that are unbind able by the user. */
+		SLATE_ARGUMENT(TArray<FKey>, EscapeKeys)
+
+		/** Occurs whenever a new key is selected. */
+		SLATE_EVENT(FOnKeySelected, OnKeySelected)
+
+		/** Occurs whenever key selection mode starts and stops. */
+		SLATE_EVENT(FOnIsSelectingChanged, OnIsSelectingChanged)
+
+		/** Sometimes a button should only be mouse-clickable and never keyboard focusable. */
+		SLATE_ARGUMENT(bool, IsFocusable)
+	SLATE_END_ARGS()
+
+	void Construct(const FArguments& InArgs);
+
+	/** Gets the currently selected key chord. */
+	FInputChord GetSelectedKey() const;
+
+	/** Sets the currently selected key chord. */
+	void SetSelectedKey(const TAttribute<FInputChord>& InSelectedKey);
+
+	/** Sets the margin around the text used to display the currently selected key */
+	void SetMargin(const TAttribute<FMargin>& InMargin);
+
+	/** Sets the style of the button which is used enter key selection mode. */
+	void SetButtonStyle(const FButtonStyle* InButtonStyle) const;
+
+	/** Sets the style of the text on the button which is used enter key selection mode. */
+	void SetTextStyle(const FTextBlockStyle* InTextStyle) const;
+
+	/** Sets the text which is displayed when selecting a key. */
+	void SetKeySelectionText(FText InKeySelectionText) { KeySelectionText = MoveTemp(InKeySelectionText); }
+
+	/** Sets the text to display when no key text is available or not selecting a key. */
+	void SetNoKeySpecifiedText(FText InNoKeySpecifiedText) { NoKeySpecifiedText = MoveTemp(InNoKeySpecifiedText); }
+
+	void SetInputSelectorTypes(int32 NewInputSelectorTypes);
+	void SetKeySelectorTypes(int32 NewKeySelectorTypes);
+	void SetUseAxisProperties(const bool bInUseAxisProperties) { UseAxisProperties = bInUseAxisProperties; }
+
+	void SetMinRange(const float InMinRange) { MinRange = InMinRange; }
+	void SetMaxRange(const float InMaxRange) { MaxRange = InMaxRange; }
+
+	void SetMinRangeOffset(const float InMinRangeOffset) { MinRangeOffset = InMinRangeOffset; }
+	void SetMaxRangeOffset(const float InMaxRangeOffset) { MaxRangeOffset = InMaxRangeOffset; }
+	void SetAxisSelectionTimeout(const float InAxisSelectionTimeout) { AxisSelectionTimeout = InAxisSelectionTimeout; }
+
+	void SetDeadZone(const float InDeadZone) { DeadZone = InDeadZone; }
+
+	/** Sets the escape keys to check against. */
+	void SetEscapeKeys(TArray<FKey> InEscapeKeys) { EscapeKeys = MoveTemp(InEscapeKeys); }
+
+	/** Returns true whenever key selection mode is active, otherwise returns false. */
+	bool GetIsSelectingKey() const { return bIsSelectingKey; }
+
+	/** Sets the visibility of the text block. */
+	void SetTextBlockVisibility(const EVisibility InVisibility) const;
+
+	virtual FReply OnAnalogValueChanged(const FGeometry& MyGeometry, const FAnalogInputEvent& InAnalogInputEvent) override;
+	virtual FReply OnKeyDown(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent) override;
+	virtual FReply OnKeyUp(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent) override;
+	virtual FReply OnPreviewKeyDown(const FGeometry& MyGeometry, const FKeyEvent& InKeyEvent) override;
+	virtual FReply OnPreviewMouseButtonDown(const FGeometry& MyGeometry, const FPointerEvent& MouseEvent) override;
+	virtual FReply OnMouseButtonDown(const FGeometry& MyGeometry, const FPointerEvent& MouseEvent) override;
+	virtual void OnFocusLost(const FFocusEvent& InFocusEvent) override;
+	virtual FNavigationReply OnNavigation(const FGeometry& MyGeometry, const FNavigationEvent& InNavigationEvent) override;
+	virtual bool SupportsKeyboardFocus() const override { return true; }
+
+private:
+	/** Gets the display text for the currently selected key. */
+	FText GetSelectedKeyText() const;
+
+	/**  Gets the margin around the text used to display the currently selected key. */
+	FMargin GetMargin() const;
+
+	/** Handles the OnClicked event from the button which enables key selection mode. */
+	FReply OnClicked();
+
+	/** Sets the currently selected key and invokes the associated events. */
+	void SelectKey(const FKey& Key, bool bShiftDown, bool bControlDown, bool bAltDown, bool bCommandDown);
+
+	/** Sets bIsSelectingKey and invokes the associated events. */
+	void SetIsSelectingKey(const bool bInIsSelectingKey);
+
+	/** Returns true, if the key has been specified as an escape key, else false. */
+	bool IsEscapeKey(const FKey& InKey) const;
+
+	/** Returns true if the key should be processed based on InputSelectorTypes, else false. */
+	bool ShouldProcessInputKey(const FKey& InKey) const;
+
+	/** True when key selection mode is active. */
+	bool bIsSelectingKey = false;
+
+	/** The currently selected key chord. */
+	TAttribute<FInputChord> SelectedKey;
+
+	/** The margin around the text used to display the currently selected key. */
+	TAttribute<FMargin> Margin;
+
+	/** The text to display when selecting keys. */
+	FText KeySelectionText;
+
+	/**  The text to display while no key text is available or not selecting a key. */
+	FText NoKeySpecifiedText;
+
+	bool UseAxisProperties = true;
+	float MinRange = 0.0f;
+	float MaxRange = 1.0f;
+
+	float MinRangeOffset = 0.0f;
+	float MaxRangeOffset = 0.0f;
+	float AxisSelectionTimeout = 5.0f;
+	TMap<FKey, FKeySelectorData> KeyData;
+
+	/** Define dead zone percentage to avoid unintentional axis mapping */
+	float DeadZone = 0.05f;
+
+	int32 InputSelectorTypes = 0;
+	int32 KeySelectorTypes = 0;
+
+	/** When true, pressing escape will cancel the key selection, when false, pressing escape will select the escape key. */
+	bool bEscapeCancelsSelection = true;
+
+	/** When EscapeCancelsSelection is true, escape on specific keys that are unbind able by the user. */
+	TArray<FKey> EscapeKeys;
+
+	/** Delegate which is run any time a new button is selected. */
+	FOnKeySelected OnKeySelected;
+
+	/** Delegate which is run when key selection mode starts and stops. */
+	FOnIsSelectingChanged OnIsSelectingChanged;
+
+	/** The button which starts the key selection mode. */
+	TSharedPtr<SButton> Button;
+
+	/** The text which is rendered on the button. */
+	TSharedPtr<STextBlock> TextBlock;
+
+	/** Can this button be focused? */
+	bool bIsFocusable = true;
+};
