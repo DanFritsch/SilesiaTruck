@@ -1,5 +1,9 @@
-[8564:1684:0623/215720.498:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[8564:14796:0623/215720.573:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
-[8564:1684:0623/215720.587:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[9640:14648:0623/215725.941:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-EB3870B3E89416A205E7A13AAB30C49E will be ignored
-[8564:1684:0624/021422.329:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[23508:15884:0624/111633.963:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[23508:15884:0624/111634.016:ERROR:os_crypt_win.cc(100)] Failed to decrypt: Nieprawidłowy klucz do użycia w podanym stanie. (0x8009000B)
+[23508:22424:0624/111634.064:ERROR:google_update_settings.cc(265)] Failed opening key Software\Chromium to set usagestats; result: 5
+[23508:15884:0624/111634.098:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[3404:19068:0624/111644.829:ERROR:backend_impl.cc(989)] Critical error found -8
+[3404:19068:0624/111645.041:WARNING:storage_block-inl.h(138)] Failed data load.
+[15016:28256:0624/111645.191:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-7B3280FE33FB98F6CE534A5BDA7B7CEE will be ignored
+[23508:15884:0624/111645.411:ERROR:device_event_log_impl.cc(196)] [11:16:45.396] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Nie można odnaleźć elementu. (0x490)
+[23508:15884:0624/112048.612:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
